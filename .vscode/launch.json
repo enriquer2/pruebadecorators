@@ -7,7 +7,7 @@
             "type": "node",
             "request": "launch",
             "name": "Iniciar programa",
-            "program": "${workspaceRoot}\\dist\\proof.js"
+            "program": "${workspaceRoot}\\dist\\client2.js"
         },
         {
             "type": "node",

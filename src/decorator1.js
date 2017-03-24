@@ -9,20 +9,17 @@ export const deco = function(...params) { //... convierte en array
 }
 export const nom = function(...params) { //... convierte en array
     return function(target, key, descriptor) {
-        console.log(params[0]);
-        console.log(target);
-        target.meta = { alfa: 'nooooo' };
-        console.log(key);
-        console.log(descriptor);
+        let old = descriptor.get;
+        descriptor.get = function() {
+            return old.call(this) || params;
+        }
     };
 }
 export const change = function(...params) { //... convierte en array
         return function(target, key, descriptor) {
-            console.log(params[0]);
-            console.log(target);
-            target.meta = { beta: 'siiii' };
-            console.log(key);
-            console.log(descriptor);
+
+            target.constructor["BBDD"] = { table: params }
+
         };
     }
     /////////////////////////////////////////////////////////////////////////////////////
