@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -24,11 +24,10 @@ var nom = exports.nom = function nom() {
 
     //... convierte en array
     return function (target, key, descriptor) {
-        console.log(params[0]);
-        console.log(target);
-        target.meta = { alfa: 'nooooo' };
-        console.log(key);
-        console.log(descriptor);
+        var old = descriptor.get;
+        descriptor.get = function () {
+            return old.call(this) || params;
+        };
     };
 };
 var change = exports.change = function change() {
@@ -38,11 +37,8 @@ var change = exports.change = function change() {
 
     //... convierte en array
     return function (target, key, descriptor) {
-        console.log(params[0]);
-        console.log(target);
-        target.meta = { beta: 'siiii' };
-        console.log(key);
-        console.log(descriptor);
+
+        target.constructor["BBDD"] = { table: params };
     };
 };
 /////////////////////////////////////////////////////////////////////////////////////
