@@ -1,13 +1,13 @@
 class Methods {
-    var setData = function (object, data) {
+    setData(object, data) {
         object.data = data;
     };
 
-    var getData = function (object) {
+    getData(object) {
         return object.data
     };
 
-    var deleteData = function (object) {
+    deleteData(object) {
         object.data = null;
     };
 }

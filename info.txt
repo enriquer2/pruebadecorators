@@ -1,4 +1,9 @@
-Url:
-- https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/defineProperty
+objeto meta - 3 objetos
+@clase - nombre clase
 
--https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/__defineGetter__
+@metodo - array con todos los metodos de la clase(el nombre)(meter dos metodos)
+
+@propiedad - array con all propiedades de la clase(nombre)(meter dos propiedades)
+
+
+meta:

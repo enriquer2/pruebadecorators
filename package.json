@@ -5,7 +5,7 @@
     "main": "metadata.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "babel src -d dist"
+        "build": "babel demo -d house"
     },
     "author": "",
     "license": "ISC",

@@ -7,7 +7,7 @@
             "type": "node",
             "request": "launch",
             "name": "Iniciar programa",
-            "program": "${workspaceRoot}\\dist\\final.js"
+            "program": "${workspaceRoot}\\house\\demo.js"
         },
         {
             "type": "node",
