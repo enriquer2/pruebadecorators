@@ -6,4 +6,4 @@ objeto meta - 3 objetos
 @propiedad - array con all propiedades de la clase(nombre)(meter dos propiedades)
 
 
-meta:
+constructor.meta

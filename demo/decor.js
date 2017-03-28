@@ -19,7 +19,7 @@ export const clase = function(...params) {
         console.log('Second');
         target.meta = target.meta || {};
         target.meta.clase = {};
-        //        target.meta.clase.name = params[0]; //revisar que name esta creado o no?
+        target.meta.clase.name = params[0]; //revisar que name esta creado o no?
     }
 }
 
@@ -27,8 +27,14 @@ export const metodo = function(...params) {
     return function(target, key, descriptor) {
         console.log('Third');
         target.meta = target.meta || {};
-        target.meta.metodos = {};
-        target.meta.metodos = { lista: params };
+        target.meta.metodos = target.meta.metodos || {};
+        target.meta.metodos = target.meta.metodos.lista || { lista: [] };
+        //        target.meta.metodos.push(params);
+        console.log(params[0]);
+        console.log(target.meta.metodos);
+        console.log(target.meta.metodos.lista);
+        //        target.meta.metodos.lista.push(params);
+        target.meta.metodos.lista(params[0]);
 
     }
 }

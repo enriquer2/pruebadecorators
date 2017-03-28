@@ -1,4 +1,4 @@
-import { clase, metodo, propiedad } from './decor'
+import { clase, metodo, propiedad } from './decorator'
 
 @clase('Foo')
 class Foo {

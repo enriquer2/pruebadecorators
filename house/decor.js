@@ -24,30 +24,40 @@ var table = exports.table = function table() {
 };
 
 var clase = exports.clase = function clase() {
-    return function (target, key, descriptor) {
-        console.log('Second');
-        target.meta = target.meta || {};
-        target.meta.clase = {};
-        //        target.meta.clase.name = params[0]; //revisar que name esta creado o no?
-    };
-};
-
-var metodo = exports.metodo = function metodo() {
     for (var _len2 = arguments.length, params = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
         params[_key2] = arguments[_key2];
     }
 
     return function (target, key, descriptor) {
+        console.log('Second');
+        target.meta = target.meta || {};
+        target.meta.clase = {};
+        target.meta.clase.name = params[0]; //revisar que name esta creado o no?
+    };
+};
+
+var metodo = exports.metodo = function metodo() {
+    for (var _len3 = arguments.length, params = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
+        params[_key3] = arguments[_key3];
+    }
+
+    return function (target, key, descriptor) {
         console.log('Third');
         target.meta = target.meta || {};
-        target.meta.metodos = {};
-        target.meta.metodos = { lista: params };
+        target.meta.metodos = target.meta.metodos || {};
+        target.meta.metodos = target.meta.metodos.lista || { lista: [] };
+        //        target.meta.metodos.push(params);
+        console.log(params[0]);
+        console.log(target.meta.metodos);
+        console.log(target.meta.metodos.lista);
+        //        target.meta.metodos.lista.push(params);
+        target.meta.metodos.lista(params[0]);
     };
 };
 
 var propiedad = exports.propiedad = function propiedad() {
-    for (var _len3 = arguments.length, params = Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-        params[_key3] = arguments[_key3];
+    for (var _len4 = arguments.length, params = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+        params[_key4] = arguments[_key4];
     }
 
     return function (target, key, descriptor) {
