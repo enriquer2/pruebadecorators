@@ -9,26 +9,9 @@ function createMethod(entity, method, value) {
     let meta = createMeta(entity);
     let _method = (meta[METHODS] = meta[METHODS] || {});
     _method[method] = {
-        [decorator]: value };
+        [decorator]: value
+    };
 }
-
-
-
-export const clase = function(...params) {
-    return function(target, key, descriptor) {
-        console.log('Second');
-        target.meta = target.meta || {};
-        target.meta.clase = {};
-        target.meta.clase.name = params[0]; //revisar que name esta creado o no?
-    }
-}
-
-
-
-
-
-
-
 
 class Foo {
     @
