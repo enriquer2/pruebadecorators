@@ -13,11 +13,15 @@ function createMethod(entity, method, value) {
     };
 }
 
-class Foo {
-    @
+/*
+class Client {
+    @dede
     write() {}
     read() {}
 }
 
+/*
 createMethod(Foo, "write", { id: 1 });
 createMethod(Foo, "read", { id: 33 });
+
+*/

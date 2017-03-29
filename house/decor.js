@@ -31,8 +31,12 @@ var clase = exports.clase = function clase() {
     return function (target, key, descriptor) {
         console.log('Second');
         target.meta = target.meta || {};
-        target.meta.clase = {};
-        target.meta.clase.name = params[0]; //revisar que name esta creado o no?
+        target.meta.entity = target.meta.entity || {};
+        target.meta.entity.name = params[0]; //revisar que name esta creado o no?
+        console.log('target', target);
+        console.log('key', key);
+        console.log('descriptor', descriptor);
+        //target.meta.entity.name.decorator = params[0];
     };
 };
 
@@ -43,27 +47,28 @@ var metodo = exports.metodo = function metodo() {
 
     return function (target, key, descriptor) {
         console.log('Third');
-        target.meta = target.meta || {};
-        target.meta.metodos = target.meta.metodos || {};
-        target.meta.metodos = target.meta.metodos.lista || { lista: [] };
-        //        target.meta.metodos.push(params);
+        target.constructor.meta = target.constructor.meta || {};
+        target.constructor.meta.methods = target.constructor.meta.methods || {};
+        target.constructor.meta.methods.name = [key];
+        target.constructor.meta.methods.name.decorator = params[0];
         console.log(params[0]);
-        console.log(target.meta.metodos);
-        console.log(target.meta.metodos.lista);
+        console.log('target', target);
+        console.log('key', key);
+        console.log('descriptor', descriptor);
         //        target.meta.metodos.lista.push(params);
-        target.meta.metodos.lista(params[0]);
+        //        target.meta.metodos.lista = params[0];
     };
 };
 
 var propiedad = exports.propiedad = function propiedad() {
-    for (var _len4 = arguments.length, params = Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-        params[_key4] = arguments[_key4];
-    }
-
     return function (target, key, descriptor) {
         console.log('Fourth');
-        target.meta = target.meta || {};
-        target.meta.propiedades = {};
-        target.meta.propiedades = { lista: params };
+        target.constructor.meta = target.constructor.meta || {};
+        target.constructor.meta.properties = {};
+        console.log('target', target);
+        console.log('key', key);
+        console.log('descriptor', descriptor);
+        target.constructor.meta.properties.name = [key];
+        target.constructor.meta.properties.name.decorator = 'propiedad';
     };
 };
