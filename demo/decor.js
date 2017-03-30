@@ -20,9 +20,9 @@ export const clase = function(...params) {
         target.meta = target.meta || {};
         target.meta.entity = target.meta.entity || {};
         target.meta.entity.name = params[0]; //revisar que name esta creado o no?
-        console.log('target', target);
-        console.log('key', key);
-        console.log('descriptor', descriptor);
+        console.log('Second target', target);
+        console.log('Second key', key);
+        console.log('Second descriptor', descriptor);
         //target.meta.entity.name.decorator = params[0];
     }
 }
@@ -36,10 +36,10 @@ export const metodo = function(...params) {
         target.constructor.meta.methods = target.constructor.meta.methods || {};
         target.constructor.meta.methods.name = [key];
         target.constructor.meta.methods.name.decorator = params[0];
-        console.log(params[0]);
-        console.log('target', target);
-        console.log('key', key);
-        console.log('descriptor', descriptor);
+        //        console.log(params[0]);
+        //        console.log('target', target);
+        //        console.log('key', key);
+        //        console.log('descriptor', descriptor);
         //        target.meta.metodos.lista.push(params);
         //        target.meta.metodos.lista = params[0];
 
@@ -48,12 +48,12 @@ export const metodo = function(...params) {
 
 export const propiedad = function(...params) {
     return function(target, key, descriptor) {
-        console.log('Fourth');
+        //        console.log('Fourth');
         target.constructor.meta = target.constructor.meta || {};
         target.constructor.meta.properties = {};
-        console.log('target', target);
-        console.log('key', key);
-        console.log('descriptor', descriptor);
+        //        console.log('target', target);
+        //        console.log('key', key);
+        //        console.log('descriptor', descriptor);
         target.constructor.meta.properties.name = [key];
         target.constructor.meta.properties.name.decorator = 'propiedad';
     }

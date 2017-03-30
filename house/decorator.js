@@ -17,7 +17,7 @@ function createMethod(entity, method, value) {
 
 /*
 class Client {
-    @
+    @dede
     write() {}
     read() {}
 }
